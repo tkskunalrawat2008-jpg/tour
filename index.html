@@ -1,0 +1,2277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rawat Ji Tour & Travels · Delhi to Uttarakhand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ---------- RESET & VARIABLES ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0f1419;
+      --bg-alt: #151b24;
+      --surface: #1a212c;
+      --surface-2: #222b38;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #f0f4f8;
+      --text-muted: #94a3b8;
+      --saffron: #ff9933;
+      --saffron-dark: #e67e22;
+      --green: #138808;
+      --green-light: #22c55e;
+      --navy: #1e3a5f;
+      --gold: #f4c430;
+      --gradient: linear-gradient(135deg, #ff9933 0%, #e67e22 50%, #138808 100%);
+      --gradient-2: linear-gradient(135deg, #ff9933 0%, #e67e22 100%);
+      --gradient-green: linear-gradient(135deg, #138808 0%, #22c55e 100%);
+      --glow: 0 0 40px rgba(255, 153, 51, 0.25);
+      --shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.6);
+      --radius: 20px;
+      --radius-sm: 14px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ---------- NAVIGATION ---------- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 0;
+      transition: all var(--transition);
+    }
+
+    nav.scrolled {
+      background: rgba(15, 20, 25, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.7rem 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-logo .logo-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--gradient-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.3rem;
+      box-shadow: 0 6px 18px -6px rgba(255, 153, 51, 0.6);
+    }
+
+    .nav-logo .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-logo .logo-text .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo .logo-text .tagline {
+      font-size: 0.68rem;
+      color: var(--saffron);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color var(--transition);
+      position: relative;
+      padding: 0.3rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-2);
+      border-radius: 2px;
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after,
+    .nav-links a.active::after { width: 100%; }
+    .nav-links a.active { color: var(--saffron); }
+
+    .nav-cta {
+      background: var(--gradient-2);
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all var(--transition);
+      box-shadow: 0 6px 18px -6px rgba(255, 153, 51, 0.6);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px -6px rgba(255, 153, 51, 0.7);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #0f1419 0%, #151b24 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 153, 51, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(19, 136, 8, 0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Mountain silhouette */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 180px;
+      background: 
+        linear-gradient(180deg, transparent 0%, rgba(15, 20, 25, 0.9) 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200' preserveAspectRatio='none'%3E%3Cpath d='M0,200 L0,120 L80,80 L160,100 L240,50 L340,90 L420,40 L520,80 L600,30 L700,70 L800,20 L900,60 L1000,40 L1100,70 L1200,50 L1200,200 Z' fill='%23151b24'/%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: bottom;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255, 153, 51, 0.1);
+      border: 1px solid rgba(255, 153, 51, 0.3);
+      color: var(--saffron);
+      padding: 0.5rem 1.1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.8s ease backwards;
+    }
+
+    .hero-badge i { font-size: 0.9rem; }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.3rem;
+      animation: fadeInUp 0.8s ease 0.1s backwards;
+    }
+
+    .hero h1 .gradient-text {
+      background: var(--gradient-2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero h1 .green-text {
+      background: var(--gradient-green);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.8s ease 0.2s backwards;
+    }
+
+    .hero-desc strong { color: var(--text); font-weight: 600; }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease 0.3s backwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.95rem 1.9rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--gradient-2);
+      color: white;
+      box-shadow: 0 10px 26px -8px rgba(255, 153, 51, 0.6);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px -8px rgba(255, 153, 51, 0.75);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--saffron);
+      color: var(--saffron);
+      transform: translateY(-3px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease 0.4s backwards;
+    }
+
+    .hero-stat {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .hero-stat .stat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 153, 51, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--saffron);
+      font-size: 1.1rem;
+    }
+
+    .hero-stat .stat-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .hero-stat .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Hero visual - booking card */
+    .hero-visual {
+      position: relative;
+      animation: fadeInUp 0.8s ease 0.35s backwards;
+    }
+
+    .booking-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .booking-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient);
+    }
+
+    .booking-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .booking-card .sub {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .route-display {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 1.2rem;
+      background: var(--bg-alt);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+
+    .route-display .city {
+      flex: 1;
+    }
+
+    .route-display .city .name {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .route-display .city .code {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .route-display .city.to { text-align: right; }
+
+    .route-display .arrow {
+      color: var(--saffron);
+      font-size: 1.1rem;
+    }
+
+    .booking-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .booking-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .booking-feature i {
+      color: var(--green-light);
+      font-size: 0.95rem;
+      width: 1.2rem;
+      text-align: center;
+    }
+
+    .booking-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .booking-price .label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .booking-price .value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--saffron);
+    }
+
+    .booking-price .value small {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .booking-btn {
+      background: var(--gradient-green);
+      color: white;
+      padding: 0.7rem 1.4rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .booking-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px -8px rgba(19, 136, 8, 0.6);
+    }
+
+    /* Floating badges */
+    .float-badge {
+      position: absolute;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 0.7rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      animation: floatBadge 4s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .float-badge i { color: var(--saffron); }
+
+    .float-badge.badge-1 {
+      top: -18px;
+      right: -18px;
+      animation-delay: 0s;
+    }
+
+    .float-badge.badge-2 {
+      bottom: -18px;
+      left: -18px;
+      animation-delay: -2s;
+    }
+
+    .float-badge.badge-2 i { color: var(--green-light); }
+
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--saffron);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-tag::before,
+    .section-tag::after {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--saffron);
+      border-radius: 2px;
+    }
+
+    .section-head h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-head p {
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    /* ---------- SERVICES ---------- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.8rem;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 153, 51, 0.3);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: rgba(255, 153, 51, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--saffron);
+      margin-bottom: 1.3rem;
+    }
+
+    .service-icon.green { background: rgba(19, 136, 8, 0.12); color: var(--green-light); }
+    .service-icon.blue { background: rgba(59, 130, 246, 0.12); color: #60a5fa; }
+    .service-icon.purple { background: rgba(168, 85, 247, 0.12); color: #c084fc; }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      flex: 1;
+    }
+
+    .service-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.2rem;
+    }
+
+    .service-features span {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ---------- AMENITIES ---------- */
+    .amenities-section {
+      background: var(--bg-alt);
+    }
+
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .amenity-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1.6rem 1.2rem;
+      text-align: center;
+      transition: all var(--transition);
+    }
+
+    .amenity-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 153, 51, 0.3);
+      box-shadow: var(--shadow);
+    }
+
+    .amenity-card .amenity-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--gradient-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: white;
+      margin: 0 auto 1rem;
+      box-shadow: 0 8px 20px -8px rgba(255, 153, 51, 0.6);
+    }
+
+    .amenity-card .amenity-icon.green {
+      background: var(--gradient-green);
+      box-shadow: 0 8px 20px -8px rgba(19, 136, 8, 0.6);
+    }
+
+    .amenity-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .amenity-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* ---------- FLEET ---------- */
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .fleet-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+
+    .fleet-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 153, 51, 0.3);
+      box-shadow: var(--shadow);
+    }
+
+    .fleet-image {
+      height: 220px;
+      background: linear-gradient(135deg, #1e3a5f 0%, #2a4a6f 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fleet-image i {
+      font-size: 5rem;
+      color: rgba(255, 255, 255, 0.9);
+      transition: transform 0.5s ease;
+    }
+
+    .fleet-card:hover .fleet-image i {
+      transform: scale(1.1);
+    }
+
+    .fleet-image.taxi {
+      background: linear-gradient(135deg, #f4c430 0%, #e67e22 100%);
+    }
+
+    .fleet-image.bus {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2a4a6f 100%);
+    }
+
+    .fleet-image.tempo {
+      background: linear-gradient(135deg, #138808 0%, #22c55e 100%);
+    }
+
+    .fleet-body {
+      padding: 1.8rem;
+    }
+
+    .fleet-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .fleet-body p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .fleet-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .fleet-spec {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    .fleet-spec i {
+      color: var(--saffron);
+      font-size: 0.9rem;
+      width: 1.1rem;
+    }
+
+    /* ---------- WHY US ---------- */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .why-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1.8rem 1.5rem;
+      transition: all var(--transition);
+      position: relative;
+    }
+
+    .why-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 153, 51, 0.3);
+      box-shadow: var(--shadow);
+    }
+
+    .why-card .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: rgba(255, 153, 51, 0.2);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .why-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .why-card p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    /* ---------- ROUTES ---------- */
+    .routes-section {
+      background: var(--bg-alt);
+    }
+
+    .routes-table-wrapper {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      overflow-x: auto;
+    }
+
+    .routes-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      min-width: 640px;
+    }
+
+    .routes-table thead {
+      background: var(--surface-2);
+    }
+
+    .routes-table th {
+      padding: 1rem 1.2rem;
+      text-align: left;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .routes-table td {
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .routes-table tr:last-child td { border-bottom: none; }
+
+    .routes-table tr:hover td {
+      background: rgba(255, 153, 51, 0.04);
+      color: var(--text);
+    }
+
+    .routes-table .route-name {
+      color: var(--text);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .routes-table .route-name i {
+      color: var(--saffron);
+      font-size: 0.85rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 30px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    .badge.daily {
+      background: rgba(19, 136, 8, 0.15);
+      color: var(--green-light);
+    }
+
+    .badge.bus {
+      background: rgba(30, 58, 95, 0.4);
+      color: #60a5fa;
+    }
+
+    .badge.taxi {
+      background: rgba(244, 196, 48, 0.15);
+      color: var(--gold);
+    }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.8rem;
+      transition: all var(--transition);
+      position: relative;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 153, 51, 0.3);
+      box-shadow: var(--shadow);
+    }
+
+    .testimonial-card .quote-icon {
+      font-size: 2rem;
+      color: rgba(255, 153, 51, 0.3);
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .testimonial-card .text {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .testimonial-author .avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--gradient-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .testimonial-author .avatar.green {
+      background: var(--gradient-green);
+    }
+
+    .testimonial-author .avatar.blue {
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    }
+
+    .testimonial-author .info .name {
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .testimonial-author .info .from {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      letter-spacing: 2px;
+    }
+
+    /* ---------- CTA / CONTACT ---------- */
+    .contact-section {
+      background: linear-gradient(135deg, rgba(255, 153, 51, 0.08) 0%, rgba(19, 136, 8, 0.06) 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .contact-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info h2 .gradient-text {
+      background: var(--gradient-2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .contact-info p {
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--text);
+      padding: 0.9rem 1.1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+
+    .contact-method:hover {
+      border-color: var(--saffron);
+      transform: translateX(5px);
+    }
+
+    .contact-method .cm-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 153, 51, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--saffron);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-method .cm-icon.green { background: rgba(19, 136, 8, 0.12); color: var(--green-light); }
+    .contact-method .cm-icon.blue { background: rgba(59, 130, 246, 0.12); color: #60a5fa; }
+
+    .contact-method .cm-text .label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-method .cm-text .value {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Booking form */
+    .booking-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .booking-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .booking-form .sub {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.92rem;
+      transition: all var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--saffron);
+      box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.12);
+    }
+
+    .form-group select option {
+      background: var(--surface);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+
+    .booking-form .btn {
+      width: 100%;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      padding: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg-alt);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand .logo-row .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--gradient-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .footer-brand .logo-row .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.87rem;
+      max-width: 280px;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--gradient-2);
+      color: white;
+      border-color: transparent;
+      transform: translateY(-3px);
+    }
+
+    .footer-col h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-col ul a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.87rem;
+      transition: all var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .footer-col ul a:hover {
+      color: var(--saffron);
+      transform: translateX(3px);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer-bottom a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover { color: var(--saffron); }
+
+    /* ---------- WHATSAPP FLOAT ---------- */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      text-decoration: none;
+      box-shadow: 0 10px 26px -6px rgba(37, 211, 102, 0.6);
+      z-index: 90;
+      transition: all var(--transition);
+      animation: pulseWhatsapp 2s ease-in-out infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 14px 34px -6px rgba(37, 211, 102, 0.8);
+    }
+
+    @keyframes pulseWhatsapp {
+      0%, 100% { box-shadow: 0 10px 26px -6px rgba(37, 211, 102, 0.6), 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      50% { box-shadow: 0 10px 26px -6px rgba(37, 211, 102, 0.6), 0 0 0 14px rgba(37, 211, 102, 0); }
+    }
+
+    /* ---------- ANIMATIONS ---------- */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-visual { max-width: 480px; margin: 0 auto; width: 100%; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .float-badge.badge-1 { right: 0; }
+      .float-badge.badge-2 { left: 0; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--surface);
+        flex-direction: column;
+        padding: 5rem 2rem;
+        gap: 1.5rem;
+        transition: right var(--transition);
+        border-left: 1px solid var(--border);
+        z-index: 99;
+      }
+
+      .nav-links.open { right: 0; }
+      .nav-links a { font-size: 1.1rem; }
+      .nav-toggle { display: block; z-index: 101; }
+      .nav-cta { display: none; }
+      section { padding: 3.5rem 0; }
+      .hero { padding: 6rem 0 3rem; }
+      .hero-stats { gap: 1.2rem; }
+      .fleet-specs { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 520px) {
+      .container { padding: 0 1rem; }
+      .hero-cta { flex-direction: column; }
+      .hero-cta .btn { width: 100%; justify-content: center; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .whatsapp-float { bottom: 1.2rem; right: 1.2rem; width: 54px; height: 54px; font-size: 1.6rem; }
+      .float-badge { font-size: 0.72rem; padding: 0.5rem 0.8rem; }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--saffron); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <div class="logo-icon"><i class="fas fa-bus"></i></div>
+        <div class="logo-text">
+          <span class="brand">Rawat Ji Travels</span>
+          <span class="tagline">Delhi → Uttarakhand</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#amenities" class="nav-link">Amenities</a></li>
+        <li><a href="#fleet" class="nav-link">Fleet</a></li>
+        <li><a href="#routes" class="nav-link">Routes</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">
+        <i class="fas fa-phone"></i> Book Now
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-star"></i>
+            Trusted Since 2015 · Delhi to Uttarakhand
+          </div>
+          <h1>
+            Travel <span class="gradient-text">Delhi to Uttarakhand</span><br>
+            in <span class="green-text">comfort & style</span>
+          </h1>
+          <p class="hero-desc">
+            Daily bus & taxi service from Delhi to the beautiful hills of Uttarakhand.
+            Enjoy <strong>free WiFi, complimentary food, water & coffee</strong>, 
+            expert drivers, and well-maintained vehicles — your journey, our responsibility.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">
+              <i class="fas fa-ticket-alt"></i> Book Your Seat
+            </a>
+            <a href="#services" class="btn btn-ghost">
+              <i class="fas fa-info-circle"></i> Our Services
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="stat-icon"><i class="fas fa-route"></i></div>
+              <div>
+                <div class="stat-value">Daily</div>
+                <div class="stat-label">Departures</div>
+              </div>
+            </div>
+            <div class="hero-stat">
+              <div class="stat-icon"><i class="fas fa-users"></i></div>
+              <div>
+                <div class="stat-value">50K+</div>
+                <div class="stat-label">Happy Travelers</div>
+              </div>
+            </div>
+            <div class="hero-stat">
+              <div class="stat-icon"><i class="fas fa-shield-halved"></i></div>
+              <div>
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Safe Journeys</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="float-badge badge-1">
+            <i class="fas fa-wifi"></i> Free WiFi
+          </div>
+          <div class="float-badge badge-2">
+            <i class="fas fa-mug-hot"></i> Free Coffee
+          </div>
+
+          <div class="booking-card">
+            <h3>Popular Route</h3>
+            <div class="sub">Book your seat today</div>
+
+            <div class="route-display">
+              <div class="city">
+                <div class="name">Delhi</div>
+                <div class="code">DEL · India</div>
+              </div>
+              <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+              <div class="city to">
+                <div class="name">Dehradun</div>
+                <div class="code">DED · Uttarakhand</div>
+              </div>
+            </div>
+
+            <div class="booking-features">
+              <div class="booking-feature"><i class="fas fa-check-circle"></i> AC Bus & Taxi Service</div>
+              <div class="booking-feature"><i class="fas fa-check-circle"></i> Free Food, Water & Coffee</div>
+              <div class="booking-feature"><i class="fas fa-check-circle"></i> Free WiFi Onboard</div>
+              <div class="booking-feature"><i class="fas fa-check-circle"></i> Expert & Trained Drivers</div>
+              <div class="booking-feature"><i class="fas fa-check-circle"></i> Well-Maintained Vehicles</div>
+            </div>
+
+            <div class="booking-cta">
+              <div class="booking-price">
+                <div class="label">Starting from</div>
+                <div class="value">₹799 <small>/ person</small></div>
+              </div>
+              <a href="#contact" class="booking-btn">
+                <i class="fas fa-arrow-right"></i> Book
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Our Services</div>
+        <h2>Travel the way you deserve</h2>
+        <p>From comfortable buses to private taxis, we offer a range of travel options to suit every need and budget.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <i class="fas fa-bus"></i>
+          </div>
+          <h3>Daily Bus Service</h3>
+          <p>
+            Comfortable AC and non-AC buses departing daily from Delhi to major 
+            cities in Uttarakhand. Spacious seats, ample legroom, and a smooth ride.
+          </p>
+          <div class="service-features">
+            <span>AC / Non-AC</span>
+            <span>Daily Departure</span>
+            <span>Multiple Cities</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon green">
+            <i class="fas fa-taxi"></i>
+          </div>
+          <h3>Taxi & Cab Service</h3>
+          <p>
+            Private taxis and cabs for a personalized journey. Perfect for families, 
+            groups, and business travelers who prefer privacy and flexibility.
+          </p>
+          <div class="service-features">
+            <span>Door-to-Door</span>
+            <span>Flexible Timing</span>
+            <span>Private Cab</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon blue">
+            <i class="fas fa-mountain-sun"></i>
+          </div>
+          <h3>Tour Packages</h3>
+          <p>
+            Curated tour packages covering Mussoorie, Nainital, Rishikesh, Haridwar, 
+            and more. Includes travel, sightseeing, and comfortable stay options.
+          </p>
+          <div class="service-features">
+            <span>Custom Tours</span>
+            <span>Hotel Booking</span>
+            <span>Guide Support</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon purple">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Group & Corporate</h3>
+          <p>
+            Special group bookings for weddings, corporate trips, school tours, and 
+            family gatherings. Customized itineraries and bulk discounts available.
+          </p>
+          <div class="service-features">
+            <span>Bulk Booking</span>
+            <span>Custom Itinerary</span>
+            <span>Best Rates</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section id="amenities" class="amenities-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">On-Board Amenities</div>
+        <h2>Free amenities for every traveler</h2>
+        <p>We believe every journey should be comfortable. That's why we offer these complimentary services on all our trips.</p>
+      </div>
+
+      <div class="amenities-grid">
+        <div class="amenity-card reveal">
+          <div class="amenity-icon">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h3>Free Food</h3>
+          <p>Delicious meals served onboard</p>
+        </div>
+
+        <div class="amenity-card reveal">
+          <div class="amenity-icon green">
+            <i class="fas fa-bottle-water"></i>
+          </div>
+          <h3>Free Water</h3>
+          <p>Chilled bottled water for all</p>
+        </div>
+
+        <div class="amenity-card reveal">
+          <div class="amenity-icon">
+            <i class="fas fa-mug-hot"></i>
+          </div>
+          <h3>Free Coffee</h3>
+          <p>Hot coffee & tea to refresh you</p>
+        </div>
+
+        <div class="amenity-card reveal">
+          <div class="amenity-icon green">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <h3>Free WiFi</h3>
+          <p>Stay connected throughout</p>
+        </div>
+
+        <div class="amenity-card reveal">
+          <div class="amenity-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3>Expert Drivers</h3>
+          <p>Trained & experienced professionals</p>
+        </div>
+
+        <div class="amenity-card reveal">
+          <div class="amenity-icon green">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Well-Maintained</h3>
+          <p>Regularly serviced vehicles</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEET -->
+  <section id="fleet">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Our Fleet</div>
+        <h2>Modern, safe & comfortable vehicles</h2>
+        <p>Choose from our range of well-maintained buses and taxis for a smooth journey to Uttarakhand.</p>
+      </div>
+
+      <div class="fleet-grid">
+        <div class="fleet-card reveal">
+          <div class="fleet-image bus">
+            <i class="fas fa-bus"></i>
+          </div>
+          <div class="fleet-body">
+            <h3>AC Luxury Bus</h3>
+            <p>Spacious push-back seats, LED TV, and charging points for a comfortable long-distance journey.</p>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fas fa-users"></i> 40-45 Seats</div>
+              <div class="fleet-spec"><i class="fas fa-snowflake"></i> AC</div>
+              <div class="fleet-spec"><i class="fas fa-plug"></i> Charging</div>
+              <div class="fleet-spec"><i class="fas fa-wifi"></i> WiFi</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fleet-card reveal">
+          <div class="fleet-image taxi">
+            <i class="fas fa-taxi"></i>
+          </div>
+          <div class="fleet-body">
+            <h3>Premium Taxi</h3>
+            <p>Private AC sedans and SUVs for a personalized, door-to-door travel experience with family.</p>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fas fa-users"></i> 4-6 Seats</div>
+              <div class="fleet-spec"><i class="fas fa-snowflake"></i> AC</div>
+              <div class="fleet-spec"><i class="fas fa-suitcase"></i> Luggage</div>
+              <div class="fleet-spec"><i class="fas fa-music"></i> Music</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fleet-card reveal">
+          <div class="fleet-image tempo">
+            <i class="fas fa-van-shuttle"></i>
+          </div>
+          <div class="fleet-body">
+            <h3>Tempo Traveller</h3>
+            <p>Ideal for group tours and family trips. Push-back seats, ample luggage space, and AC comfort.</p>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fas fa-users"></i> 12-17 Seats</div>
+              <div class="fleet-spec"><i class="fas fa-snowflake"></i> AC</div>
+              <div class="fleet-spec"><i class="fas fa-suitcase"></i> Big Luggage</div>
+              <div class="fleet-spec"><i class="fas fa-wifi"></i> WiFi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Why Choose Us</div>
+        <h2>Your comfort, our commitment</h2>
+        <p>Thousands of travelers trust Rawat Ji Tour & Travels for a reason.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="num">01</div>
+          <h3>Daily Service</h3>
+          <p>Buses and taxis depart daily from Delhi to Uttarakhand — no waiting, no delays.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="num">02</div>
+          <h3>Best Drivers</h3>
+          <p>Our drivers are trained professionals with years of mountain driving experience.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="num">03</div>
+          <h3>Good Vehicles</h3>
+          <p>All our buses and taxis are regularly serviced and maintained in top condition.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="num">04</div>
+          <h3>Free Amenities</h3>
+          <p>Enjoy complimentary food, water, coffee, and WiFi on every journey with us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROUTES -->
+  <section id="routes" class="routes-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Popular Routes</div>
+        <h2>Where would you like to go?</h2>
+        <p>We cover all major destinations in Uttarakhand from Delhi. Here are our most popular routes.</p>
+      </div>
+
+      <div class="routes-table-wrapper reveal">
+        <table class="routes-table">
+          <thead>
+            <tr>
+              <th>Route</th>
+              <th>Distance</th>
+              <th>Duration</th>
+              <th>Service</th>
+              <th>Frequency</th>
+              <th>Starting Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="route-name"><i class="fas fa-location-dot"></i> Delhi → Dehradun</span></td>
+              <td>250 km</td>
+              <td>6 hrs</td>
+              <td><span class="badge bus"><i class="fas fa-bus"></i> Bus / Taxi</span></td>
+              <td><span class="badge daily"><i class="fas fa-circle-check"></i> Daily</span></td>
+              <td>₹799</td>
+            </tr>
+            <tr>
+              <td><span class="route-name"><i class="fas fa-location-dot"></i> Delhi → Haridwar</span></td>
+              <td>220 km</td>
+              <td>5.5 hrs</td>
+              <td><span class="badge bus"><i class="fas fa-bus"></i> Bus / Taxi</span></td>
+              <td><span class="badge daily"><i class="fas fa-circle-check"></i> Daily</span></td>
+              <td>₹699</td>
+            </tr>
+            <tr>
+              <td><span class="route-name"><i class="fas fa-location-dot"></i> Delhi → Rishikesh</span></td>
+              <td>230 km</td>
+              <td>6 hrs</td>
+              <td><span class="badge bus"><i class="fas fa-bus"></i> Bus / Taxi</span></td>
+              <td><span class="badge daily"><i class="fas fa-circle-check"></i> Daily</span></td>
+              <td>₹749</td>
+            </tr>
+            <tr>
+              <td><span class="route-name"><i class="fas fa-location-dot"></i> Delhi → Mussoorie</span></td>
+              <td>290 km</td>
+              <td>7 hrs</td>
+              <td><span class="badge taxi"><i class="fas fa-taxi"></i> Taxi Only</span></td>
+              <td><span class="badge daily"><i class="fas fa-circle-check"></i> Daily</span></td>
+              <td>₹2,499</td>
+            </tr>
+            <tr>
+              <td><span class="route-name"><i class="fas fa-location-dot"></i> Delhi → Nainital</span></td>
+              <td>310 km</td>
+              <td>7.5 hrs</td>
+              <td><span class="badge bus"><i class="fas fa-bus"></i> Bus / Taxi</span></td>
+              <td><span class="badge daily"><i class="fas fa-circle-check"></i> Daily</span></td>
+              <td>₹899</td>
+            </tr>
+            <tr>
+              <td><span class="route-name"><i class="fas fa-location-dot"></i> Delhi → Jim Corbett</span></td>
+              <td>260 km</td>
+              <td>6 hrs</td>
+              <td><span class="badge taxi"><i class="fas fa-taxi"></i> Taxi Only</span></td>
+              <td><span class="badge daily"><i class="fas fa-circle-check"></i> Daily</span></td>
+              <td>₹2,999</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Traveler Reviews</div>
+        <h2>What our passengers say</h2>
+        <p>Real experiences from travelers who journeyed with Rawat Ji Tour & Travels.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="quote-icon">"</div>
+          <div class="text">
+            Excellent service! The bus was clean, the driver was very skilled on mountain 
+            roads, and the free coffee and WiFi made the journey so enjoyable. Highly recommended!
+          </div>
+          <div class="testimonial-author">
+            <div class="avatar">RS</div>
+            <div class="info">
+              <div class="name">Rahul Sharma</div>
+              <div class="from">Delhi → Nainital</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="quote-icon">"</div>
+          <div class="text">
+            We booked a taxi for our family trip to Mussoorie. The vehicle was in great 
+            condition and the driver was very polite. Free water and snacks were a nice touch!
+          </div>
+          <div class="testimonial-author">
+            <div class="avatar green">PK</div>
+            <div class="info">
+              <div class="name">Priya Kapoor</div>
+              <div class="from">Delhi → Mussoorie</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="quote-icon">"</div>
+          <div class="text">
+            I travel to Haridwar frequently for work. Rawat Ji's daily bus service is 
+            always on time, comfortable, and the staff is very helpful. Best value for money.
+          </div>
+          <div class="testimonial-author">
+            <div class="avatar blue">AM</div>
+            <div class="info">
+              <div class="name">Amit Mehta</div>
+              <div class="from">Delhi → Haridwar</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / BOOKING -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h2>Book your <span class="gradient-text">Uttarakhand journey</span> today</h2>
+          <p>
+            Call us directly or fill the booking form. Our team will confirm your 
+            reservation within minutes. Daily departures from Delhi — book now!
+          </p>
+
+          <div class="contact-methods">
+            <a href="tel:+919999999999" class="contact-method">
+              <div class="cm-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="cm-text">
+                <div class="label">Call us 24/7</div>
+                <div class="value">+91 99999 99999</div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="contact-method">
+              <div class="cm-icon green">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div class="cm-text">
+                <div class="label">WhatsApp</div>
+                <div class="value">Chat with us instantly</div>
+              </div>
+            </a>
+
+            <a href="mailto:info@rawatjitravels.com" class="contact-method">
+              <div class="cm-icon blue">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="cm-text">
+                <div class="label">Email</div>
+                <div class="value">info@rawatjitravels.com</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="booking-form reveal">
+          <h3>Quick Booking</h3>
+          <div class="sub">Fill the form — we'll call you back</div>
+
+          <form id="bookingForm">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" placeholder="Your name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="destination">Destination</label>
+                <select id="destination" required>
+                  <option value="">Select city</option>
+                  <option value="Dehradun">Dehradun</option>
+                  <option value="Haridwar">Haridwar</option>
+                  <option value="Rishikesh">Rishikesh</option>
+                  <option value="Mussoorie">Mussoorie</option>
+                  <option value="Nainital">Nainital</option>
+                  <option value="Jim Corbett">Jim Corbett</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="vehicle">Vehicle</label>
+                <select id="vehicle" required>
+                  <option value="Bus">Bus</option>
+                  <option value="Taxi">Taxi</option>
+                  <option value="Tempo Traveller">Tempo Traveller</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Travel Date</label>
+                <input type="date" id="date" required>
+              </div>
+
+              <div class="form-group">
+                <label for="passengers">Passengers</label>
+                <input type="number" id="passengers" min="1" max="50" value="1" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i> Request Booking
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-row">
+            <div class="logo-icon"><i class="fas fa-bus"></i></div>
+            <div class="brand">Rawat Ji Travels</div>
+          </div>
+          <p>
+            Your trusted travel partner from Delhi to Uttarakhand. Daily bus & taxi 
+            service with free amenities, expert drivers, and well-maintained vehicles.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="#amenities"><i class="fas fa-chevron-right"></i> Amenities</a></li>
+            <li><a href="#fleet"><i class="fas fa-chevron-right"></i> Our Fleet</a></li>
+            <li><a href="#routes"><i class="fas fa-chevron-right"></i> Routes</a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Book Now</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="#routes"><i class="fas fa-location-dot"></i> Dehradun</a></li>
+            <li><a href="#routes"><i class="fas fa-location-dot"></i> Haridwar</a></li>
+            <li><a href="#routes"><i class="fas fa-location-dot"></i> Rishikesh</a></li>
+            <li><a href="#routes"><i class="fas fa-location-dot"></i> Mussoorie</a></li>
+            <li><a href="#routes"><i class="fas fa-location-dot"></i> Nainital</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+919999999999"><i class="fas fa-phone"></i> +91 99999 99999</a></li>
+            <li><a href="mailto:info@rawatjitravels.com"><i class="fas fa-envelope"></i> Email Us</a></li>
+            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Delhi, India</a></li>
+            <li><a href="#"><i class="fas fa-clock"></i> 24/7 Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 <strong>Rawat Ji Tour & Travels</strong> · All Rights Reserved</p>
+        <p>Made with <i class="fas fa-heart" style="color: var(--saffron);"></i> for travelers</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    (function() {
+      'use strict';
+
+      // ---------- NAVBAR SCROLL ----------
+      const navbar = document.getElementById('navbar');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('section[id], header[id]');
+
+      function handleScroll() {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+
+        let current = '';
+        const scrollPos = window.scrollY + 150;
+
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+
+      // ---------- MOBILE NAV TOGGLE ----------
+      const navToggle = document.getElementById('navToggle');
+      const navLinksContainer = document.getElementById('navLinks');
+
+      navToggle.addEventListener('click', () => {
+        navLinksContainer.classList.toggle('open');
+        const icon = navToggle.querySelector('i');
+        if (navLinksContainer.classList.contains('open')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinksContainer.classList.remove('open');
+          const icon = navToggle.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        });
+      });
+
+      // ---------- SMOOTH SCROLL ----------
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // ---------- REVEAL ON SCROLL ----------
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -60px 0px'
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      // ---------- BOOKING FORM ----------
+      const bookingForm = document.getElementById('bookingForm');
+      bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('fullName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const destination = document.getElementById('destination').value;
+        const vehicle = document.getElementById('vehicle').value;
+        const date = document.getElementById('date').value;
+        const passengers = document.getElementById('passengers').value;
+
+        // simple validation
+        if (!name || !phone || !destination || !vehicle || !date) {
+          showToast('Please fill all the fields.', 'error');
+          return;
+        }
+
+        // simulate booking submission
+        const btn = bookingForm.querySelector('button');
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Booking...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fas fa-check"></i> Booking Requested!';
+          showToast(`Thank you ${name}! We'll call you shortly to confirm your ${vehicle} to ${destination}.`, 'success');
+
+          setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.disabled = false;
+            bookingForm.reset();
+          }, 2500);
+        }, 1400);
+      });
+
+      // ---------- TOAST NOTIFICATION ----------
+      function showToast(message, type = 'success') {
+        const toast = document.createElement('div');
+        toast.style.cssText = `
+          position: fixed;
+          top: 90px;
+          left: 50%;
+          transform: translateX(-50%) translateY(-20px);
+          background: ${type === 'success' ? 'linear-gradient(135deg, #138808, #22c55e)' : 'linear-gradient(135deg, #dc2626, #ef4444)'};
+          color: white;
+          padding: 1rem 1.5rem;
+          border-radius: 14px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          box-shadow: 0 16px 40px -10px rgba(0,0,0,0.5);
+          z-index: 9999;
+          opacity: 0;
+          transition: all 0.4s ease;
+          max-width: 90vw;
+          text-align: center;
+          font-family: inherit;
+        `;
+        toast.textContent = message;
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+          toast.style.opacity = '1';
+          toast.style.transform = 'translateX(-50%) translateY(0)';
+        }, 50);
+
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateX(-50%) translateY(-20px)';
+          setTimeout(() => toast.remove(), 400);
+        }, 4000);
+      }
+
+      // ---------- SET MIN DATE ----------
+      const dateInput = document.getElementById('date');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+        dateInput.value = today;
+      }
+
+      // ---------- CONSOLE SIGNATURE ----------
+      console.log('%c🚌 Rawat Ji Tour & Travels', 'color: #ff9933; font-size: 16px; font-weight: bold;');
+      console.log('%cDelhi → Uttarakhand · Daily Bus & Taxi Service', 'color: #94a3b8; font-size: 12px;');
+
+    })();
+  </script>
+</body>
+</html>
